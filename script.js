@@ -1,4 +1,4 @@
-// ===== Theme toggle (remembers choice) =====
+
 const root = document.documentElement;
 const themeBtn = document.getElementById('themeToggle');
 
@@ -26,7 +26,7 @@ nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
   menuBtn.setAttribute('aria-expanded', 'false');
 }));
 
-// ===== Highlight current section in the menu =====
+
 const links = [...nav.querySelectorAll('a')];
 const sections = links.map(a => document.querySelector(a.getAttribute('href')));
 const spy = new IntersectionObserver(entries => {
@@ -38,7 +38,7 @@ const spy = new IntersectionObserver(entries => {
 }, { rootMargin: '-45% 0px -50% 0px' });
 sections.forEach(s => s && spy.observe(s));
 
-// ===== Skill bars fill when scrolled into view =====
+
 const bars = document.querySelectorAll('.bar i');
 const barObs = new IntersectionObserver(entries => {
   entries.forEach(e => {
@@ -60,10 +60,10 @@ filterBtns.forEach(btn => btn.addEventListener('click', () => {
   projects.forEach(p => p.classList.toggle('hide', f !== 'all' && p.dataset.category !== f));
 }));
 
-// ===== Contact form: validate, then open the visitor's email app =====
+
 const form = document.getElementById('contactForm');
 const status = document.getElementById('formStatus');
-const MY_EMAIL = 'your.email@example.com'; // <-- change to your real email
+const MY_EMAIL = 'sangayc060@gmail.com'; 
 
 form.addEventListener('submit', e => {
   e.preventDefault();
@@ -87,12 +87,12 @@ form.addEventListener('submit', e => {
   form.reset();
 });
 
-// ===== Footer: year + back to top =====
+
 document.getElementById('year').textContent = new Date().getFullYear();
 document.getElementById('toTop').addEventListener('click', () =>
   window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-// ===== Typing effect on the headline =====
+
 const typedEl = document.getElementById('typed');
 const phrases = [
   'Computer System and Networking student',
@@ -110,7 +110,7 @@ if (typedEl && !reduceMotion) {
 
     let delay = deleting ? 40 : 80;
     if (!deleting && i === current.length) {
-      delay = 1800;            // pause when the phrase is complete
+      delay = 1800;            
       deleting = true;
     } else if (deleting && i === 0) {
       deleting = false;
